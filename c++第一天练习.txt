@@ -1,0 +1,180 @@
+ test1.cpp  此文件包含 main 函数。程序执行将在此处开始并结束。
+
+
+#include pch.h
+#include iostream
+using namespace std;
+
+
+int main()
+{
+	-----------------1------------------
+	任意输入一个3行3列的二维数组，求对角线之和
+	#define N 3
+	int x;
+	int sum = 0;
+	for (int i = 0; i  N; i++)
+	{
+		for (int j = 0; j  N; j++)
+		{
+			cin  x;   输入数字 三行三列
+			if (i == j)
+				sum += x;
+			if (i == N - j - 1)
+				sum += x;
+		}
+	}
+	cout  sum;
+
+	--------------------2---------------------
+	有3个整数a, b, c，由键盘输入，输出其中最大的数。
+	int a, b, c, max;
+	int a;
+	int b;
+	int c;
+	int max;
+	cin  a  b  c;
+	if (a  b)
+	{
+		if (a  c)
+			max = a;
+		else
+			max = c;
+	}
+	else
+	{
+		if (b  c)
+			max = b;
+		else
+			max = c;
+	}
+	cout  max;
+	求自然数1~10之和
+ int i=1,sum=0;
+    while(i=10)
+    {
+        sum+=i;
+        i++;
+    }
+    coutsum= sumendl;
+
+	输入一个整数，将各位数字反转后输出。
+	long n, m = 0;
+	cin  n;
+	if (n == 0)
+		cout  0  endl;
+	else
+	{
+		while (n != 0)
+		{
+			m = m  10 + n % 10;
+			n = n  10;
+		}
+		cout  m  endl;
+	}
+	输入一个整数，求出它的所有因子。
+	int n;
+	cout  输入 ;
+	cin  n;
+	cout  Number   n   Factors ;
+	for (int k = 1;k = n;k++)
+	{
+		if (n%k == 0)
+		{
+			cout  k   ;
+		}
+	}
+	cout  endl;
+	return 0;
+
+	求两自然数m, n的最大公约数
+   int m, n;
+   cout  请输入一个自然数m;
+	cin  m;
+	cout  请输入一个自然数n;
+	cin  n;
+	int i, g;
+	for (i = 1; i = m && i = n; i++) {
+		if (m%i == 0 && n%i == 0) {
+				g = i;
+		}	
+	} 
+	cout  数m与数n共同的最大公约数为;
+	cout  g;
+
+	求1 - 100以内的素数
+	int i, j, m, sum = 0;
+	for (i = 2;i = 100;i++)
+	{
+		m = int(sqrt(i));
+		for (j = 2;j = m;j++)
+		{
+			if (i%j == 0)break;
+		}
+		if (j  m)
+		{
+			cout  i  t;
+			sum++;
+			if (sum % 5 == 0)cout  endl;输出5个素数就换行一次
+		}
+	}
+	return 0;
+	鸡兔共有30只，脚共有90只，问鸡兔各有多少？
+for (int i = 1; i = 30; i++)
+{
+	for (int j = 1; j = 30 - i; j++)
+	{
+		if (2  i + 4  j == 90)
+			cout 鸡 i  ' ' 兔 j  endl;
+	}
+}
+return 0;
+交通信号灯有红，黄，绿三种颜色，利用枚举和switch实现如下功能：
+1代表红灯，2代表黄灯，3代表绿灯
+输入1输出 stop
+输入2输出 wait
+输入3输出 go
+
+enum MyEnum
+{
+	stop=1, wait, go
+};
+int a;
+cout  请输入编号1-3;
+cin  a;
+
+switch (a)
+{
+case 1
+	cout  stop  endl;
+	break;
+case 2
+	cout  wait  endl;
+	break;
+case 3
+	cout  go  endl;
+	break;
+default
+	cout  你是傻逼吗？都说了1-3还他妈乱敲，傻屌;
+	break;
+}
+
+
+struct Student
+{
+	int num;
+	char name[10];
+	char sex[5];
+	int age;
+	float score;
+};
+
+Student stu1 = { 1, 张三, 男, 22, 98.5 };
+Student stu2 = { 2, 李四, 男, 25, 95.0 };
+Student stu3 = { 3, 小红, 女, 18, 100.0 };
+
+cout  stu1.num  	 stu1.name  	  stu1.sex  	  stu1.age  	  stu1.score;
+cout  stu2.num  	  stu2.name  	  stu2.sex  	  stu2.age  	  stu2.score;
+cout  stu3.num  	  stu3.name  	  stu3.sex  	  stu3.age  	  stu3.score;
+
+}

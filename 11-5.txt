@@ -1,0 +1,99 @@
+#include "pch.h"
+#include <iostream>
+#include <string>
+#include <math.h>
+using namespace std;
+
+//可以定义点类（Point），再定义一个类（Distance）
+//描述两点之间的距离，
+//其数据成员为两个点类对象，两点之间距离的计算可设计
+//由构造函数来实现。
+
+//定义点类（Point)
+//class Point
+//{
+//private:  //创建爱你私有变量
+//	int x, y;
+//public:
+//	Point(int a = 0, int b = 0) // 构造函数
+//	{
+//		x = a;
+//		y = b;
+//	}
+//	int getX() 
+//	{
+//		return x;
+//	}
+//	int getY()
+//	{
+//		return y;
+//	}
+//};
+//定义Distance
+//class Distance
+//{
+//private:
+//	Point p1, p2;
+//	float dist;
+//public:
+//	Distance(Point q1, Point q2)
+//	{
+//		p1 = q1;
+//		p2 = q2;
+//	}
+	//float getdist() 
+	//{
+	//	float x = float(p1.getX() - p2.getX());
+	//	float y = float(p1.getY() - p2.getY());
+	//	dist = sqrt(x * x + y * y);
+	//	return dist;
+	//}
+//};
+
+/*建立一个对象数组,内放 5 个学生的数据（学号、成绩），
+	设立一个函数 max,用 指向对象的指针作函数参数，
+在 max函数中找出 5 个学生中成绩最高者,并输出其 学号.初值自拟*/
+
+class Student
+{
+private:
+	string number;
+	float score;
+public:
+	Student(string n, float s)
+	{
+		number = n;
+		score = s;
+	}
+	friend void max(Student *p);
+};
+void max(Student *p)
+	{
+		int i;
+		for (i = 0;i < 5;i++)
+		{
+			if (p->score < (p + i)->score)
+			{
+				p = (p + 1);
+			}
+		}
+		cout << "最高成绩为：" << p->score << endl;
+		cout << "学生学号为：" << p->number;
+	}
+
+int main()
+{
+	/*Point p(0, 0), q(1, 1);
+	Distance dis=Distance(p, q);
+	cout << dis.getdist();*/
+
+	Student Stud[5] = {
+			Student("201024131101",99),
+			Student("201024131102",92),
+			Student("201024131103",99.5),
+			Student("201024131104",95),
+			Student("201024131105",93)
+	};
+	Student *p = Stud;
+	max(p);
+}
